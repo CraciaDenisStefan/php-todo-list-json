@@ -12,12 +12,13 @@
 <body>
     <div id="app">
         <div class="container">
-            <div class="row">
+            <div class="row my-5">
                 <div class="col-12">
-                    <h1>todo list</h1>
-                    <ul>
+                    <h1 class="mb-5 text-center">Todo list</h1>
+                    <ul class="list-unstyled p-2 text-white">
                         <li v-for="(tasks, index) in todoList" :key="index">
                             {{tasks.text}}
+                            <hr>
                         </li>
                         
                     </ul>
@@ -25,7 +26,7 @@
                 <div class="col-12">
                     <div class="input-group">
                         <input type="text" @keyup.enter="updateTask" v-model="newTask" placeholder="new task" class="form-control">
-                        <button type="button" @click="updateTask">Aggiungi</button>
+                        <button type="button" @click="updateTask" class="btn btn-success">Aggiungi</button>
                     </div>
                 </div>
             </div>

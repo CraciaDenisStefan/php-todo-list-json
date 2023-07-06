@@ -16,7 +16,8 @@ createApp({
     methods: {
       updateTask(){
         const data ={
-            newTask : this.newTask
+            newTask : this.newTask,
+           
         }
 
         axios.post(this.apiUrl,data, {
@@ -25,9 +26,13 @@ createApp({
             this.newTask = '';
             this.todoList= response.data;
         })
-
-
       } , 
+      statusDone(index){
+        this.todoList[index].done=!this.todoList[index].done;
+    },
+    deleteTask(index){
+        this.todoList.splice(index, 1)
+    },
     },
 
 }).mount('#app');

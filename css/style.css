@@ -6,3 +6,6 @@
 body{
     background-color: rgb(2, 148, 148);
 }
+.list_task{
+    cursor: pointer;
+}

@@ -11,7 +11,18 @@
 </head>
 <body>
     <div id="app">
-    {{ciao }}
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>todo list</h1>
+                    <ul>
+                        <li v-for="(task, index) in todoList" :key="index">
+                            {{task}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 <script type ="text/javascript" src ="./js/script.js"></script>
 </body>

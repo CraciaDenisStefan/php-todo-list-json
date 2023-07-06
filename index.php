@@ -16,10 +16,17 @@
                 <div class="col-12">
                     <h1>todo list</h1>
                     <ul>
-                        <li v-for="(task, index) in todoList" :key="index">
-                            {{task}}
+                        <li v-for="(tasks, index) in todoList" :key="index">
+                            {{tasks.text}}
                         </li>
+                        
                     </ul>
+                </div>
+                <div class="col-12">
+                    <div class="input-group">
+                        <input type="text" @keyup.enter="updateTask" v-model="newTask" placeholder="new task" class="form-control">
+                        <button type="button" @click="updateTask">Aggiungi</button>
+                    </div>
                 </div>
             </div>
         </div>

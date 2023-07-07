@@ -14,6 +14,19 @@ if(isset($_POST['newTask']) && $_POST['newTask'] !== '' ){
     file_put_contents('data/todo_list.json', $array_encoded);
 }
 
+if(isset($_POST['updateTask'])){
+    $array[$_POST['updateTask']]['done']=! $array[$_POST['updateTask']]['done'];
+    $array_encoded = json_encode($array);
+    file_put_contents('data/todo_list.json', $array_encoded);
+}
+
+if(isset($_POST['deleteTask'])){
+    array_splice($array, $_POST['deleteTask'], 1);
+    $array_encoded = json_encode($array);
+    file_put_contents('data/todo_list.json', $array_encoded);
+}
+
+
 header('Content-Type: application/jason');
 echo json_encode($array)
 ?>
